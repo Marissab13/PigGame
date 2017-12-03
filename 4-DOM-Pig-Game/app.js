@@ -35,10 +35,45 @@ activePlayer = 0;
 	 
 	 	//update the round score only if the rolled number is not 1
 
+	 	if (dice !== 1) {
+	 		//add score
+	 		roundScore += dice;
+	 		document.querySelector('#current-' + activePlayer).textContent = roundScore;
+	 	} else {
+	 		//next player
+	 		activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+	 		roundScore = 0;
+
+	 		document.getElementById('current-0').textContent = '0';
+	 		document.getElementById('current-1').textContent = '0';
+
+	 		document.querySelector('.player-0-panel').classList.toggle('active');
+	 		document.querySelector('.player-1-panel').classList.toggle('active');
+
+
+	 		//document.querySelector('.player-0-panel').classList.remove('active');
+	 		//document.querySelector('.player-1-panel').classList.add('active');
+
+	 		document.querySelector('.dice').style.display = 'none';
+	 	}
+
+
  });
 
 
+//event listener for button hold
 
+document.querySelector('.btn-hold').addEventListener('click', function() {
+	//add current score to global score
+
+
+	//update UI 
+
+
+	//check if player won the game 
+
+
+});
 
 
 
